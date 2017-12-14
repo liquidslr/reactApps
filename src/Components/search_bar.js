@@ -3,7 +3,10 @@ import React from 'react';
 
 const SearchBar = () =>{
     return(
-        <input />
+        <div >
+            <input className="form-group" />
+            <button className="btn btn-primary">Search </button>
+        </div>
     )
 }
 
