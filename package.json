@@ -2,6 +2,14 @@
   "name": "youtube-player",
   "version": "0.1.0",
   "private": true,
+  "devDependencies": {
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "webpack": "*",
+    "webpack-dev-server": "*"
+  },
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

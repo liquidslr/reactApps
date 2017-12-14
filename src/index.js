@@ -7,31 +7,30 @@ import VideoDetail from './Components/video_detail'
 const API_KEY = 'AIzaSyALvAokjirery_gOkDGIeBl8VYtPCctCB4';
 
 
-
-
 class App extends Component{
     constructor(props){
         super(props);
         this.state = {
             videos: [],
-            selectedVideo: null    
+            selectedVideo: null  
+
         }
-        YTSearch({key: API_KEY, term: 'sex'}, (videos) => {
-            this.setState({
-                videos:videos,
-                selectedVideo : videos[0]
-            })
-            console.log(videos)
-        });
-      
+        this.search('sex')
     }
-     
+    search(term){
+        YTSearch({key: API_KEY, term:term}, (videos) => {
+        this.setState({
+            videos:videos,
+            selectedVideo : videos[0]
+        })
+     })
+    }
     render(){
         return(
             <div className="container">
-            <SearchBar />
-            <VideoDetail video={this.state.videos[0]} />
-            <VideoList  onVideoSelect={ selectedVideo =>{ this.setState(selectedVideo)}} videos={this.state.videos} />
+            <SearchBar onSearchTermChange = {searchTerm => this.search(searchTerm)} />
+            <VideoDetail video={this.state.selectedVideo}/>
+            <VideoList  onVideoSelect={selectedVideo => this.setState({selectedVideo})} videos={this.state.videos} />
             </div>
         )
     }
