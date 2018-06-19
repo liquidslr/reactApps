@@ -13,7 +13,7 @@ class App extends Component {
       videos: [],
       selectedVideo: null
     };
-    this.search("sex");
+    this.search("shit");
   }
   search(term) {
     YTSearch({ key: API_KEY, term: term }, videos => {
