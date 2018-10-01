@@ -15,7 +15,7 @@
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17",
     "babel-preset-stage-1": "^6.1.18",
-    "lodash": "^*",
+    "lodash": "^4.17.4",
     "youtube-api-search": "*"
   },
   "scripts": {
